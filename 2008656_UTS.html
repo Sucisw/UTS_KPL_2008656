@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Program Gaji Karyawan</title>
+    </head>
+
+    <body>
+        <script language = "JavaScript">
+            function totalGaji(){
+                var nik = (document.fform.inik.value);
+                var nama = (document.fform.inama.value);
+                var jns_klm = (document.fform.ijns_klm.value);
+                var golongan = (document.fform.igolongan.value);
+                var gajiPokok = 0.0;
+                var tunjangan = 0.0;
+                var potongan = 0.0;
+                var total = 0.0;
+
+                if (golongan == "Golongan I"){
+                    gajiPokok = 3000000;
+                    tunjangan = 600000;
+                }
+
+                else if (golongan == "Golongan II"){
+                    gajiPokok = 4000000;
+                    tunjangan = 800000;
+                }
+
+                else if (golongan == "Golongan III"){
+                    gajiPokok = 5000000;
+                    tunjangan = 1000000;
+                }
+
+                else {
+                    gajiPokok = 6000000;
+                    tunjangan = 1200000;
+                }
+
+                potongan = 0.1 * (gajiPokok + tunjangan);
+                total = (gajiPokok + tunjangan) - potongan;
+
+                //digunakan untuk mengecek alert (total)
+                document.fform.ogajiPokok.value = eval(gajiPokok);
+                document.fform.otunjangan.value = eval(tunjangan);
+                document.fform.opotongan.value = eval(potongan);
+                document.fform.ototal.value = eval(total);
+            }
+
+        </script>
+
+        <div class="identitas">
+            <div class="container">
+                <h6></h6>
+            </div>
+        </div>
+
+        <header>
+            <h1>Gaji Karyawan</h1>
+                <ul class="nav-list">
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle-user"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+                </ul>
+        </header>
+
+        <div class="formulir">
+            <div class="datapegawai">
+                <form name = "fform">
+                        <table>
+                            <tr>
+                                <td><label>NIK</label></td>
+                                <td>: <input type= "text" size="165" name="inik" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Nama</label></td>
+                                <td>: <input type= "text" size="165" name="inama" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Jenis Kelamin</label></td>
+                                <td>: <input type="radio" name="ijns_klm" /> Pria <input type="radio" name="ijns_klm" /> Wanita </td>
+                            </tr>
+                            <tr>
+                                <td><label>Golongan</label></td>
+                                <td>: 
+                                <select name="igolongan">
+                                    <option value="Golongan I">Golongan I</option>
+                                    <option value="Golongan II">Golongan II</option>
+                                    <option value="Golongan III">Golongan III</option>
+                                    <option value="Golongan IV">Golongan IV</option>
+                                </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Gaji Pokok</label></td>
+                                <td>: <input type="text" size="165" name="ogajiPokok" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Tunjangan</label></td>
+                                <td>: <input type="text" size="165" name="otunjangan" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Potongan</label></td>
+                                <td>: <input type="text" size="165" name="opotongan" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Total Gaji</label></td>
+                                <td>: <input type="text" size="165" name="ototal" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><br><input type="button" value="Submit" onclick="totalGaji()" />
+                                <input type="reset" value="Reset" /> </td>
+                            </tr>
+                        </table>
+                </form>
+            </div>
+        </div>   
+
+        <footer>
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                    <div class="footer-col">
+                        <h4>Layanan</h4>
+                        <ul>
+                            <li><a href="#">Bantuan</a></li>
+                            <li><a href="#">Hubungi Kami</a></li>
+                            <li><a href="#">Kebijakan Privasi</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Masukan dan Saran</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </footer>
+
+        <div class="copyright">
+            <div class="container">
+                <p>© Copyright 2022, All right reserved</p>
+            </div>
+        </div>
+    </body>
+</html>
